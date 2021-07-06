@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="BirthdayForm.Designer.cs">
       <DependentUpon>BirthdayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Firend_info.cs">
       <SubType>Form</SubType>
     </Compile>
