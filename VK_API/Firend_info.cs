@@ -25,6 +25,7 @@ namespace VK_API
             Status_checkBox.Enabled = false;
             Sex_checkBox.Enabled = false;
             ID_checkBox.Enabled = false;
+            Online_checkBox.Enabled = false;
                 var api_user = new VkApi();
                 api_user.Authorize(new ApiAuthParams
                 {
@@ -49,6 +50,7 @@ namespace VK_API
             bd_checkBox.Enabled = true;
             Status_checkBox.Enabled = true;
             ID_checkBox.Enabled = true;
+            Online_checkBox.Enabled = true;
             var api_user = new VkApi();
             api_user.Authorize(new ApiAuthParams
             {
@@ -63,7 +65,7 @@ namespace VK_API
             //Вывод ID
             if (ID_checkBox.Checked)
             {
-                textBox1.Text += "ID:" + Environment.NewLine + getFriends[si].Id + Environment.NewLine; 
+                textBox1.Text += "ID:" + Environment.NewLine + getFriends[si].Domain + Environment.NewLine; 
             }
             // Вывод пола
             if (Sex_checkBox.Checked)
@@ -99,12 +101,16 @@ namespace VK_API
                     textBox1.Text += "*** НЕ УКАЗАНО ***" + Environment.NewLine;
                 }
             }
-
+            // Последний раз был в сети
+            if (Online_checkBox.Checked)
+            {
+                textBox1.Text += "Последний раз в сети:" + Environment.NewLine + getFriends[si].LastSeen.Time + Environment.NewLine;
+            }
             }
 
         private void Firend_info_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
     }

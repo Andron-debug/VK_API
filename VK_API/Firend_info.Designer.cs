@@ -35,6 +35,7 @@ namespace VK_API
             this.Status_checkBox = new System.Windows.Forms.CheckBox();
             this.Sex_checkBox = new System.Windows.Forms.CheckBox();
             this.ID_checkBox = new System.Windows.Forms.CheckBox();
+            this.Online_checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -104,12 +105,25 @@ namespace VK_API
             this.ID_checkBox.UseVisualStyleBackColor = true;
             this.ID_checkBox.CheckedChanged += new System.EventHandler(this.Filtr_Changed);
             // 
+            // Online_checkBox
+            // 
+            this.Online_checkBox.AutoSize = true;
+            this.Online_checkBox.ForeColor = System.Drawing.Color.White;
+            this.Online_checkBox.Location = new System.Drawing.Point(18, 138);
+            this.Online_checkBox.Name = "Online_checkBox";
+            this.Online_checkBox.Size = new System.Drawing.Size(145, 21);
+            this.Online_checkBox.TabIndex = 7;
+            this.Online_checkBox.Text = "Последний online";
+            this.Online_checkBox.UseVisualStyleBackColor = true;
+            this.Online_checkBox.CheckedChanged += new System.EventHandler(this.Filtr_Changed);
+            // 
             // Firend_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Online_checkBox);
             this.Controls.Add(this.ID_checkBox);
             this.Controls.Add(this.Sex_checkBox);
             this.Controls.Add(this.Status_checkBox);
@@ -132,5 +146,6 @@ namespace VK_API
         private System.Windows.Forms.CheckBox Status_checkBox;
         private System.Windows.Forms.CheckBox Sex_checkBox;
         private System.Windows.Forms.CheckBox ID_checkBox;
+        private System.Windows.Forms.CheckBox Online_checkBox;
     }
 }
