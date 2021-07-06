@@ -49,5 +49,17 @@ namespace VK_API
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (token.Text != "")
+            {
+                Form f = new Firend_info(token.Text);
+                f.Show();
+                this.Hide();
+            }
+            else MessageBox.Show("Введите токен");
+           
+        }
     }
 }
