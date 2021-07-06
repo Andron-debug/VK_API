@@ -122,7 +122,7 @@ namespace VK_API
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(374, 42);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Поздравить подпищика с днем рождения";
+            this.button1.Text = "Поздравить подписчика с днем рождения";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -161,6 +161,7 @@ namespace VK_API
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Start_form";
+            this.Load += new System.EventHandler(this.Start_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -44,5 +44,10 @@ namespace VK_API
         {
 
         }
+
+        private void Start_form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
