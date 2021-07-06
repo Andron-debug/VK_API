@@ -39,5 +39,10 @@ namespace VK_API
                 button3.Enabled = true;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
