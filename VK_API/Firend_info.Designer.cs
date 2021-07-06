@@ -146,6 +146,7 @@ namespace VK_API
             this.Controls.Add(this.textBox1);
             this.Name = "Firend_info";
             this.Text = "Firend_info";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Firend_info_FormClosing);
             this.Load += new System.EventHandler(this.Firend_info_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

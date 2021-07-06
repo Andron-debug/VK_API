@@ -133,6 +133,11 @@ namespace VK_API
         {
             
         }
+
+        private void Firend_info_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
     }
 
