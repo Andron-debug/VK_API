@@ -36,6 +36,7 @@ namespace VK_API
             this.Sex_checkBox = new System.Windows.Forms.CheckBox();
             this.ID_checkBox = new System.Windows.Forms.CheckBox();
             this.Online_checkBox = new System.Windows.Forms.CheckBox();
+            this.Mutual_friends_checkBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -117,12 +118,25 @@ namespace VK_API
             this.Online_checkBox.UseVisualStyleBackColor = true;
             this.Online_checkBox.CheckedChanged += new System.EventHandler(this.Filtr_Changed);
             // 
+            // Mutual_friends_checkBox
+            // 
+            this.Mutual_friends_checkBox.AutoSize = true;
+            this.Mutual_friends_checkBox.ForeColor = System.Drawing.Color.White;
+            this.Mutual_friends_checkBox.Location = new System.Drawing.Point(18, 165);
+            this.Mutual_friends_checkBox.Name = "Mutual_friends_checkBox";
+            this.Mutual_friends_checkBox.Size = new System.Drawing.Size(125, 21);
+            this.Mutual_friends_checkBox.TabIndex = 8;
+            this.Mutual_friends_checkBox.Text = "Общие друзья";
+            this.Mutual_friends_checkBox.UseVisualStyleBackColor = true;
+            this.Mutual_friends_checkBox.CheckedChanged += new System.EventHandler(this.Filtr_Changed);
+            // 
             // Firend_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Mutual_friends_checkBox);
             this.Controls.Add(this.Online_checkBox);
             this.Controls.Add(this.ID_checkBox);
             this.Controls.Add(this.Sex_checkBox);
@@ -147,5 +161,6 @@ namespace VK_API
         private System.Windows.Forms.CheckBox Sex_checkBox;
         private System.Windows.Forms.CheckBox ID_checkBox;
         private System.Windows.Forms.CheckBox Online_checkBox;
+        private System.Windows.Forms.CheckBox Mutual_friends_checkBox;
     }
 }

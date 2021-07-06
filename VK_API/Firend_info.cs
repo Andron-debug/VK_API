@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VkNet;
 using VkNet.Model;
+using VkNet.Enums.Filters;
 using VkNet.Model.RequestParams;
 
 namespace VK_API
@@ -26,6 +27,7 @@ namespace VK_API
             Sex_checkBox.Enabled = false;
             ID_checkBox.Enabled = false;
             Online_checkBox.Enabled = false;
+            Mutual_friends_checkBox.Enabled = false;
                 var api_user = new VkApi();
                 api_user.Authorize(new ApiAuthParams
                 {
@@ -51,6 +53,7 @@ namespace VK_API
             Status_checkBox.Enabled = true;
             ID_checkBox.Enabled = true;
             Online_checkBox.Enabled = true;
+            Mutual_friends_checkBox.Enabled = true;
             var api_user = new VkApi();
             api_user.Authorize(new ApiAuthParams
             {
@@ -106,7 +109,25 @@ namespace VK_API
             {
                 textBox1.Text += "Последний раз в сети:" + Environment.NewLine + getFriends[si].LastSeen.Time + Environment.NewLine;
             }
+            // Общие друзья
+            if (Mutual_friends_checkBox.Checked)
+            {
+                textBox1.Text += "Общие друзья:" + Environment.NewLine;
+                var f_friends = api_user.Friends.Get(new VkNet.Model.RequestParams.FriendsGetParams
+                {
+                    UserId = getFriends[si].Id,
+                    Fields = ProfileFields.Domain,
+                });
+                foreach (User f_friend in f_friends)
+                {
+                    string domian = f_friend.Domain;
+                    foreach( User my_friend in getFriends)
+                        if (domian == my_friend.Domain)
+                            textBox1.Text += Encoding.UTF8.GetString(Encoding.Default.GetBytes(my_friend.FirstName)) + " " + Encoding.UTF8.GetString(Encoding.Default.GetBytes(my_friend.LastName)) + Environment.NewLine;
+                }
             }
+
+        }
 
         private void Firend_info_Load(object sender, EventArgs e)
         {
