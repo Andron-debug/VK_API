@@ -42,7 +42,7 @@ namespace VK_API
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            BirthdayForm f = new BirthdayForm(token.Text, group_ID.Text);
         }
 
         private void Start_form_Load(object sender, EventArgs e)
