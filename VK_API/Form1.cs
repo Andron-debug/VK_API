@@ -16,7 +16,6 @@ namespace VK_API
         {
             InitializeComponent();
             radioButton_group.Checked = true;
-            button2.Enabled = false;
             button3.Enabled = false;
         }
 
@@ -27,7 +26,6 @@ namespace VK_API
                 label3.Visible = true;
                 group_ID.Visible = true;
                 button1.Enabled = true;
-                button2.Enabled = false;
                 button3.Enabled = false;
             }
             else
@@ -35,7 +33,6 @@ namespace VK_API
                 label3.Visible = false;
                 group_ID.Visible = false;
                 button1.Enabled = false;
-                button2.Enabled = true;
                 button3.Enabled = true;
             }
         }
