@@ -40,15 +40,15 @@ namespace VK_API
             // users_listbox
             // 
             this.users_listbox.FormattingEnabled = true;
-            this.users_listbox.Location = new System.Drawing.Point(180, 52);
+            this.users_listbox.Location = new System.Drawing.Point(12, 21);
             this.users_listbox.Name = "users_listbox";
-            this.users_listbox.Size = new System.Drawing.Size(120, 95);
+            this.users_listbox.Size = new System.Drawing.Size(120, 225);
             this.users_listbox.TabIndex = 0;
             this.users_listbox.SelectedIndexChanged += new System.EventHandler(this.users_listbox_SelectedIndexChanged);
             // 
             // photo
             // 
-            this.photo.Location = new System.Drawing.Point(520, 21);
+            this.photo.Location = new System.Drawing.Point(159, 46);
             this.photo.Name = "photo";
             this.photo.Size = new System.Drawing.Size(200, 200);
             this.photo.TabIndex = 1;
@@ -56,30 +56,29 @@ namespace VK_API
             // 
             // copy_link
             // 
-            this.copy_link.Location = new System.Drawing.Point(573, 246);
+            this.copy_link.Location = new System.Drawing.Point(188, 17);
             this.copy_link.Name = "copy_link";
-            this.copy_link.Size = new System.Drawing.Size(75, 23);
+            this.copy_link.Size = new System.Drawing.Size(147, 23);
             this.copy_link.TabIndex = 2;
-            this.copy_link.Text = "copy link";
+            this.copy_link.Text = "Копировать ссылку";
             this.copy_link.UseVisualStyleBackColor = true;
             this.copy_link.Click += new System.EventHandler(this.copy_link_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 246);
+            this.textBox1.Location = new System.Drawing.Point(383, 21);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 90);
+            this.textBox1.Size = new System.Drawing.Size(259, 90);
             this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "Я не знаю кто ты, но с днём рождения :D";
             // 
             // send
             // 
-            this.send.Location = new System.Drawing.Point(225, 342);
+            this.send.Location = new System.Drawing.Point(468, 136);
             this.send.Name = "send";
-            this.send.Size = new System.Drawing.Size(75, 23);
+            this.send.Size = new System.Drawing.Size(90, 35);
             this.send.TabIndex = 4;
-            this.send.Text = "send";
+            this.send.Text = "Запостить";
             this.send.UseVisualStyleBackColor = true;
             this.send.Click += new System.EventHandler(this.send_Click);
             // 
@@ -87,7 +86,8 @@ namespace VK_API
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.ClientSize = new System.Drawing.Size(675, 267);
             this.Controls.Add(this.send);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.copy_link);
