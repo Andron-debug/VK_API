@@ -39,6 +39,16 @@ namespace VK_API
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(token.Text == "")
+            {
+                MessageBox.Show("Введите token");
+                return;
+            }
+            if(group_ID.Text == "")
+            {
+                MessageBox.Show("Введите id группы");
+                return;
+            }
             BirthdayForm f = new BirthdayForm(token.Text, group_ID.Text);
         }
 
