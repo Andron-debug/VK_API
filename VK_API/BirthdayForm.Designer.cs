@@ -36,6 +36,7 @@ namespace VK_API
             this.send = new System.Windows.Forms.Button();
             this.Message_checkBox = new System.Windows.Forms.CheckBox();
             this.Post_checkBox = new System.Windows.Forms.CheckBox();
+            this.Home = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,12 +114,23 @@ namespace VK_API
             this.Post_checkBox.Text = "Написать пост";
             this.Post_checkBox.UseVisualStyleBackColor = true;
             // 
+            // Home
+            // 
+            this.Home.Location = new System.Drawing.Point(801, 273);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(87, 44);
+            this.Home.TabIndex = 10;
+            this.Home.Text = "МЕНЮ";
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
+            // 
             // BirthdayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(900, 329);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.Post_checkBox);
             this.Controls.Add(this.Message_checkBox);
             this.Controls.Add(this.send);
@@ -129,6 +141,7 @@ namespace VK_API
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "BirthdayForm";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.BirthdayForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -144,5 +157,6 @@ namespace VK_API
         private System.Windows.Forms.Button send;
         private System.Windows.Forms.CheckBox Message_checkBox;
         private System.Windows.Forms.CheckBox Post_checkBox;
+        private System.Windows.Forms.Button Home;
     }
 }

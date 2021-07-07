@@ -154,5 +154,17 @@ namespace VK_API
                     }
                 }
             }
+
+        private void BirthdayForm_Load(object sender, EventArgs e)
+        {
+
         }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            Form f = new Start_form();
+            f.Show();
+            this.Hide();
+        }
+    }
     }

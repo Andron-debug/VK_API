@@ -29,6 +29,8 @@ namespace VK_API
             Online_checkBox.Enabled = false;
             Mutual_friends_checkBox.Enabled = false;
                 var api_user = new VkApi();
+            try
+            {
                 api_user.Authorize(new ApiAuthParams
                 {
                     AccessToken = token
@@ -42,6 +44,12 @@ namespace VK_API
                 {
                     Friend.Items.Add(Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.FirstName)) + " " + Encoding.UTF8.GetString(Encoding.Default.GetBytes(user.LastName)));
                 }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Ошибка: " + e.Message);
+                
+            }
          }
 
 
@@ -137,6 +145,13 @@ namespace VK_API
         private void Firend_info_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            Form f = new Start_form();
+            f.Show();
+            this.Hide();
         }
     }
     }

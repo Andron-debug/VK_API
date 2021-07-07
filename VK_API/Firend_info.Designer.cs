@@ -37,6 +37,7 @@ namespace VK_API
             this.ID_checkBox = new System.Windows.Forms.CheckBox();
             this.Online_checkBox = new System.Windows.Forms.CheckBox();
             this.Mutual_friends_checkBox = new System.Windows.Forms.CheckBox();
+            this.Home = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -130,12 +131,23 @@ namespace VK_API
             this.Mutual_friends_checkBox.UseVisualStyleBackColor = true;
             this.Mutual_friends_checkBox.CheckedChanged += new System.EventHandler(this.Filtr_Changed);
             // 
+            // Home
+            // 
+            this.Home.Location = new System.Drawing.Point(28, 388);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(87, 44);
+            this.Home.TabIndex = 9;
+            this.Home.Text = "МЕНЮ";
+            this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
+            // 
             // Firend_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.Mutual_friends_checkBox);
             this.Controls.Add(this.Online_checkBox);
             this.Controls.Add(this.ID_checkBox);
@@ -163,5 +175,6 @@ namespace VK_API
         private System.Windows.Forms.CheckBox ID_checkBox;
         private System.Windows.Forms.CheckBox Online_checkBox;
         private System.Windows.Forms.CheckBox Mutual_friends_checkBox;
+        private System.Windows.Forms.Button Home;
     }
 }
