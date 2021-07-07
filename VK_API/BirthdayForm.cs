@@ -67,7 +67,7 @@ namespace VK_API
 
                     User u = new User(id);
                     users.Add(u);
-                    users_listbox.Items.Add(id.FirstName + " " + id.LastName);
+                    users_listbox.Items.Add(Encoding.UTF8.GetString(Encoding.Default.GetBytes(id.FirstName)) + " " + Encoding.UTF8.GetString(Encoding.Default.GetBytes(id.LastName)));
                 }
 
                 if (users.Count == 0)
