@@ -71,6 +71,7 @@ namespace VK_API
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(259, 90);
             this.textBox1.TabIndex = 3;
+            this.textBox1.Text = "Привет. Я не знаю кто ты, но с днём рождения :D";
             // 
             // send
             // 
@@ -78,7 +79,7 @@ namespace VK_API
             this.send.Name = "send";
             this.send.Size = new System.Drawing.Size(90, 35);
             this.send.TabIndex = 4;
-            this.send.Text = "Запостить";
+            this.send.Text = "Отправить";
             this.send.UseVisualStyleBackColor = true;
             this.send.Click += new System.EventHandler(this.send_Click);
             // 

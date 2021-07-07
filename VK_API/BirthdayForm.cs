@@ -96,8 +96,6 @@ namespace VK_API
                 return;
 
             photo.Load(users[index].photo.ToString());
-
-            textBox1.Text = "С Днём Рождения, " + users[index].first_name + " " + users[index].last_name + "!";
         }
 
         private void copy_link_Click(object sender, EventArgs e)
@@ -116,18 +114,20 @@ namespace VK_API
             if (index < 0)
                 return;
 
-            DialogResult dialogResult = MessageBox.Show("Вы точно хотите запостить текст в текущей группе?", "Точно?", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Вы точно хотите отправить сообщение пользователю?", "Точно?", MessageBoxButtons.YesNo);
             if (dialogResult != DialogResult.Yes)
                 return;
 
             try
             {
-                api.Wall.Post(new VkNet.Model.RequestParams.WallPostParams
+                api.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams
                 {
-                    OwnerId = -1 * users[index].id,
+                    RandomId = DateTime.Now.ToFileTime(),
+                    UserId = users[index].id,
                     Message = textBox1.Text
                 });
-                MessageBox.Show("Пост отправлен");
+
+                MessageBox.Show("Сообщение отправлено");
             }
             catch (Exception ex)
             {
