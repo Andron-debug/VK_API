@@ -94,6 +94,7 @@ namespace VK_API
             int index = users_listbox.SelectedIndex;
             if (index < 0)
                 return;
+
             textBox1.Text = "C ДНЕМ РОЖДЕНИЯ, " + Encoding.UTF8.GetString(Encoding.Default.GetBytes(users[index].first_name)).ToUpper()+" "+ Encoding.UTF8.GetString(Encoding.Default.GetBytes(users[index].last_name)).ToUpper()+"!";
             photo.Load(users[index].photo.ToString());
         }
@@ -114,7 +115,7 @@ namespace VK_API
             if (index < 0)
                 return;
 
-            DialogResult dialogResult = MessageBox.Show("Вы точно хотите совершит действия?", "Точно?", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Вы точно хотите совершить действия?", "Точно?", MessageBoxButtons.YesNo);
             if (dialogResult != DialogResult.Yes)
                 return;
             if (!Message_checkBox.Checked && !Post_checkBox.Checked) MessageBox.Show("Действие не выбрано");
@@ -146,11 +147,11 @@ namespace VK_API
                             Message = textBox1.Text
                         });
 
-                        MessageBox.Show("Пост написан");
+                        MessageBox.Show("Пост опубликован");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Ошибка при написании поста\n" + ex.Message);
+                        MessageBox.Show("Ошибка при публикации поста\n" + ex.Message);
                     }
                 }
             }
@@ -162,9 +163,7 @@ namespace VK_API
 
         private void Home_Click(object sender, EventArgs e)
         {
-            Form f = new Start_form();
-            f.Show();
-            this.Hide();
+            this.Close();
         }
     }
     }
