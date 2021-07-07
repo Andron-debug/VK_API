@@ -94,7 +94,7 @@ namespace VK_API
             int index = users_listbox.SelectedIndex;
             if (index < 0)
                 return;
-
+            textBox1.Text = "C ДНЕМ РОЖДЕНИЯ, " + Encoding.UTF8.GetString(Encoding.Default.GetBytes(users[index].first_name)).ToUpper()+" "+ Encoding.UTF8.GetString(Encoding.Default.GetBytes(users[index].last_name)).ToUpper()+"!";
             photo.Load(users[index].photo.ToString());
         }
 
@@ -114,26 +114,45 @@ namespace VK_API
             if (index < 0)
                 return;
 
-            DialogResult dialogResult = MessageBox.Show("Вы точно хотите отправить сообщение пользователю?", "Точно?", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Вы точно хотите совершит действия?", "Точно?", MessageBoxButtons.YesNo);
             if (dialogResult != DialogResult.Yes)
                 return;
-
-            try
+            if (!Message_checkBox.Checked && !Post_checkBox.Checked) MessageBox.Show("Действие не выбрано");
+            if (Message_checkBox.Checked)
             {
-                api.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams
+                try
                 {
-                    RandomId = DateTime.Now.ToFileTime(),
-                    UserId = users[index].id,
-                    Message = textBox1.Text
-                });
+                    api.Messages.Send(new VkNet.Model.RequestParams.MessagesSendParams
+                    {
+                        RandomId = DateTime.Now.ToFileTime(),
+                        UserId = users[index].id,
+                        Message = textBox1.Text
+                    });
 
-                MessageBox.Show("Сообщение отправлено");
+                    MessageBox.Show("Сообщение отправлено");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка: " + ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка: " + ex.Message);
-            }
+            if (Post_checkBox.Checked)
+                {
+                    try
+                    {
+                        api.Wall.Post(new VkNet.Model.RequestParams.WallPostParams
+                        {
+                            
+                            Message = textBox1.Text
+                        });
 
+                        MessageBox.Show("Пост написан");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ошибка: " + ex.Message);
+                    }
+                }
+            }
         }
     }
-}
