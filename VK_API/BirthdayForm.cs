@@ -133,7 +133,7 @@ namespace VK_API
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ошибка: " + ex.Message);
+                    MessageBox.Show("Ошибка при отправки сообщения\n" + ex.Message);
                 }
             }
             if (Post_checkBox.Checked)
@@ -150,7 +150,7 @@ namespace VK_API
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Ошибка: " + ex.Message);
+                        MessageBox.Show("Ошибка при написании поста\n" + ex.Message);
                     }
                 }
             }
